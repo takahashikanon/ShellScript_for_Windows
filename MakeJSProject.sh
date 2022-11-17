@@ -4,8 +4,10 @@ else
     FNAME=NewProject
 fi
 
-mkdir $FNAME; cd $FNAME
+DIR=$(cd $(dirname $0); pwd)
 
+cd DIR; mkdir $FNAME
+cd $FNAME
 mkdir css; mkdir js
 
 HTML=`cat << EOF
