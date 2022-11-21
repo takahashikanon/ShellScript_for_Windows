@@ -1,3 +1,5 @@
+#!/bin/bash
+
 if [ $# -ne 0 ]; then
     FNAME=$1
 else
@@ -6,7 +8,9 @@ fi
 
 DIR=$(cd $(dirname $0); pwd)
 
-cd DIR; mkdir $FNAME
+cd DIR
+echo $DIR
+mkdir $FNAME
 cd $FNAME
 mkdir css; mkdir js
 
@@ -30,9 +34,11 @@ html{margin:0px;}
 body{margin:0px;}
 EOF
 `
+
 echo $HTML > index.html
 echo $CSS > css/style.css
 type > js/code.js
+type > image
 
 if [ -d ../${FNAME} ]; then
     SUCCESS="Success to make new project. Name is ${FNAME}."
