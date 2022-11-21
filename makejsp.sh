@@ -12,7 +12,7 @@ cd DIR
 echo $DIR
 mkdir $FNAME
 cd $FNAME
-mkdir css; mkdir js
+mkdir css; mkdir js; make image
 
 HTML=`cat << EOF
 <!DOCTYPE html><html lang="en">
@@ -38,7 +38,6 @@ EOF
 echo $HTML > index.html
 echo $CSS > css/style.css
 type > js/code.js
-type > image
 
 if [ -d ../${FNAME} ]; then
     SUCCESS="Success to make new project. Name is ${FNAME}."
